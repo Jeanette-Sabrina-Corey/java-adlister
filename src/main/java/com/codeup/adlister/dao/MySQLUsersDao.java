@@ -51,7 +51,17 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-    private User extractUser(ResultSet rs) throws SQLException {
+  @Override
+  public void update(User user) {
+
+  }
+
+  @Override
+  public void delete(User user) {
+
+  }
+
+  private User extractUser(ResultSet rs) throws SQLException {
         if (! rs.next()) {
             return null;
         }
