@@ -63,8 +63,16 @@ public class MySQLAdsDao implements Ads {
 
 
   @Override
-  public void searchByTitle(String title) {
-
+  public Ad searchByTitle(String title) {
+    String query = "SELECT * FROM ads where title = ?";
+    try {
+      PreparedStatement stmt = connection.prepareStatement(query);
+      stmt.setString(1,title);
+      ResultSet rs = stmt.executeQuery();
+      return extractAd(rs);
+    } catch (SQLException e) {
+      throw new RuntimeException("Error searching for ad by title");
+    }
   }
 
   @Override
