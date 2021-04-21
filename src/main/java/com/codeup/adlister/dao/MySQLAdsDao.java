@@ -74,7 +74,19 @@ public class MySQLAdsDao implements Ads {
 
   @Override
   public Ad getAdById(long id) {
-    return null;
+      try {
+          String query = "SELECT * FROM ads WHERE id = ?";
+          PreparedStatement stmt = connection.prepareStatement(query);
+          stmt.setLong(1, id);
+          ResultSet rs = stmt.executeQuery();
+          if (! rs.next()){
+              return null;
+          }
+          return extractAd(rs);
+
+      } catch (SQLException e) {
+          throw new RuntimeException("Error creating a new ad.", e);
+      }
   }
 
   private Ad extractAd(ResultSet rs) throws SQLException {
