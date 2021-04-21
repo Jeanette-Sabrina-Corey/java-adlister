@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet ("ads/detailed")
+@WebServlet ("/ads/detailed")
 public class adDetailsServlet extends HttpServlet {
 
     @Override
@@ -21,7 +21,7 @@ public class adDetailsServlet extends HttpServlet {
         Ad ad = DaoFactory.getAdsDao().getAdById(id); // - Need to create a getAdById method
         req.setAttribute("ad", ad);                //   in the interface and define it
                                                       //   in the MySQLAdsDao
-        req.getRequestDispatcher("/WEB-INF/detailed.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/ads/detailed.jsp").forward(req, resp);
     }
 
 
