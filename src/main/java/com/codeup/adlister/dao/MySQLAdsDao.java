@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.mysql.cj.PerConnectionLRUFactory;
 import com.mysql.cj.jdbc.Driver;
 
 import java.io.FileInputStream;
@@ -77,7 +78,14 @@ public class MySQLAdsDao implements Ads {
 
   @Override
   public void delete(Ad ad) {
-
+    String query = "DELETE FROM ads Where id = ?";
+    try {
+      PreparedStatement stmt = connection.prepareStatement(query);
+      stmt.setLong(1,ad.getId());
+      stmt.executeUpdate();
+    } catch (SQLException throwables) {
+      throwables.printStackTrace();
+    }
   }
 
   @Override
