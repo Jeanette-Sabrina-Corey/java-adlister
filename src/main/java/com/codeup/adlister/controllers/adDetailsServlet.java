@@ -15,7 +15,7 @@ public class adDetailsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        long id = Long.parseLong(req.getParameter("id"));// id for button has to be ${Ad.id}
+        int id = Integer.parseInt(req.getParameter("id"));// id for button has to be ${Ad.id}
 
         // - Storing the ad being selected in this req obj so it can be displayed in the adDetails.jsp
         Ad ad = DaoFactory.getAdsDao().getAdById(id); // - Need to create a getAdById method
