@@ -13,6 +13,7 @@ import java.io.IOException;
 @WebServlet ("/ads/detailed")
 public class adDetailsServlet extends HttpServlet {
 
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         long id = Long.parseLong(req.getParameter("id"));// id for button has to be ${Ad.id}
@@ -23,6 +24,5 @@ public class adDetailsServlet extends HttpServlet {
                                                       //   in the MySQLAdsDao
         req.getRequestDispatcher("/WEB-INF/ads/detailed.jsp").forward(req, resp);
     }
-
 
 }

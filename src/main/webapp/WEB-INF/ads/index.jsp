@@ -16,6 +16,9 @@
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+            <form action="/ads/detailed">
+            <button type="submit" name="id" id="id" value="${ad.id}">Tell me more...</button>
+            </form>
         </div>
     </c:forEach>
 </div>
