@@ -60,6 +60,8 @@ public class MySQLAdsDao implements Ads {
 
   }
 
+
+
   @Override
   public void searchByTitle(String title) {
 
@@ -68,6 +70,11 @@ public class MySQLAdsDao implements Ads {
   @Override
   public void delete(Ad ad) {
 
+  }
+
+  @Override
+  public Ad getAdById(long id) {
+    return null;
   }
 
   private Ad extractAd(ResultSet rs) throws SQLException {

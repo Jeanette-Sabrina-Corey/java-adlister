@@ -12,4 +12,5 @@ public interface Ads {
     void update(Ad ad);
     void searchByTitle(String title);
     void delete(Ad ad);
+    Ad getAdById(long id);
 }
