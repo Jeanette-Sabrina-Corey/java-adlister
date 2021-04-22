@@ -30,7 +30,8 @@ public class EditProfileServlet extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
         String passwordConfirmation = req.getParameter("confirm_password");
-//        int id = req.getSession().getAttribute("user.id");
+
+        int id = req.getSession().getAttribute("userId");
 
         boolean inputHasErrors =
                 username.isEmpty()
