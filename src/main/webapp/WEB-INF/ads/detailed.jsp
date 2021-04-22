@@ -13,7 +13,7 @@
 <div class="container">
     <div class="col-md-6">
         <h2>${ad.title}</h2>
-<%--        <h5>${user.username}</h5>--%>
+        <h5>${user.username}</h5>
         <p>${ad.description}</p>
     </div>
 </div>
