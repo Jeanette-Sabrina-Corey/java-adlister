@@ -11,10 +11,17 @@
   <title>Title</title>
 </head>
 <body>
-<form method="POST" action="/edit">
+<form method="post" action="/ads">
   <div class="form-group">
-<%--    <label for="title">${ad.title}</label>--%>
+    <label for="title">Title</label>
+    <input id="title" placeholder="Enter new Title name" name="new_title" type="text">
   </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input id="description" placeholder="Enter new description" name="new_description" type="text">
+  </div>
+  <button type="submit" name="editAd" class="btn btn-danger">Edit Ad</button>
 </form>
+
 </body>
 </html>
