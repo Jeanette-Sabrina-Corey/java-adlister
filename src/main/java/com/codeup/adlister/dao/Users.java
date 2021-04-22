@@ -9,5 +9,5 @@ public interface Users {
     Long insert(User user);
     void update(String username, String email, String password, int id);
     void delete(User user);
-    User getUserById(long id);
+    User getUserById(int id);
 }
