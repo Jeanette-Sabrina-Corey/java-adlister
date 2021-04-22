@@ -11,6 +11,10 @@
   <title>Title</title>
 </head>
 <body>
-<h1>TESTING</h1>
+<form method="POST" action="/edit">
+  <div class="form-group">
+<%--    <label for="title">${ad.title}</label>--%>
+  </div>
+</form>
 </body>
 </html>
