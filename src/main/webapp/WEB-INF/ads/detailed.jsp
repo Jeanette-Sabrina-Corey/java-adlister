@@ -18,5 +18,6 @@
     </div>
 </div>
 
+<jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>
 </html>
