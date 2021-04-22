@@ -9,19 +9,32 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-<div class="container">
-    <h1>Here Are all the ads!</h1>
+<div>
 
-    <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
-            <form action="/ads/detailed">
-            <button type="submit" name="id" id="id" value="${ad.id}">Tell me more...</button>
-            </form>
-        </div>
-    </c:forEach>
+<c:forEach var="ad" items="${ads}">
+<div class="card m-5" style="width: 18rem;">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-body">
+            <div>
+                <h5>${ad.title}</h5>
+                <p>${ad.description}</p>
+                <div class="row">
+                <form action="/ads/detailed">
+                    <button type="submit" name="id" id="id" class="btn btn-primary m-2" value="${ad.id}">View
+                        More</button>
+                </form>
+                <form action="/edit">
+                    <button type="submit" name="edit" id="edit" class="btn btn-primary m-2" value="${ad.id}">Edit
+                    </button>
+                </form>
+                </div>
+            </div>
+    </div>
 </div>
+</c:forEach>
+
+</div>
+
 
 </body>
 </html>
