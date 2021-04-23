@@ -16,7 +16,7 @@ import java.io.IOException;
 public class EditProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("id");// this may need to be changed but the value should be ${sessionScope.user.username}
+        String username = req.getParameter("username");
 
         User user = DaoFactory.getUsersDao().findByUsername(username);
         req.setAttribute("user", user);
@@ -28,16 +28,13 @@ public class EditProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String email = req.getParameter("email");
-        String password = req.getParameter("password");
-        String passwordConfirmation = req.getParameter("confirm_password");
 
-        int id = req.getSession().getAttribute("userId");
+
 
         boolean inputHasErrors =
                 username.isEmpty()
-                || email.isEmpty()
-                || password.isEmpty()
-                || (! password.equals(passwordConfirmation));
+                || email.isEmpty();
+
 
         if (inputHasErrors) {
             resp.sendRedirect("/profile-edit");
