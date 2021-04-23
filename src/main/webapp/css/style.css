@@ -78,3 +78,37 @@
     padding-top: 1em;
     margin-bottom: 2em;
 }
+
+.bg-reg {
+    background-image: url("../img/reg-img.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.brand-reg {
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
+    color: var(--army-green);
+    font-size: 5em;
+    padding-top: .5em;
+    margin-bottom: .2em;
+}
+
+.reg-tagline {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--jet);
+    margin-bottom: 1.5em;
+}
+
+.reg-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: var(--off-white);
+    background-color: var(--army-green);
+    margin-top: .5em;
+}
