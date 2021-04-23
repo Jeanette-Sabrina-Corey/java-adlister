@@ -16,7 +16,7 @@ import java.io.IOException;
 public class EditProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("username");
+//        String username = req.getParameter("username");
         long id = Long.parseLong(req.getParameter("editUser"));
         User user = DaoFactory.getUsersDao().getUserById(id);
         req.setAttribute("user", user);
