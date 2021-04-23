@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Open+Sans&display=swap');
+
+/*Fonts we are using below...*/
+/*font-family: 'Cabin', sans-serif;*/
+/*font-family: 'Open Sans', sans-serif;*/
+
+:root {
+    --olive-green: #586B31;
+    --army-green: #474B24;
+    --orange: #F28F3B;
+    --off-white: #EAEBE4;
+    --jet: #3A3839;
+    --laurel-green: #C1C5AE;
+}
+
+.bg {
+    background-image: url("../img/landing-img.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.brand {
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
+    color: var(--off-white);
+    font-size: 5em;
+    padding-top: 2em;
+}
+
+.tagline {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--jet);
+    margin-bottom: 2em;
+}
+
+.landing-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: var(--off-white);
+    background-color: var(--orange);
+}
