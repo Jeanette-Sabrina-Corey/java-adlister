@@ -90,7 +90,7 @@ public class MySQLAdsDao implements Ads {
     String query = "DELETE FROM ads Where id = ?";
     try {
       PreparedStatement stmt = connection.prepareStatement(query);
-      stmt.setLong(1,ad.getId());
+      stmt.setLong(1,id);
       stmt.executeUpdate();
     } catch (SQLException e) {
       throw new RuntimeException("Error Deleting Ad");
