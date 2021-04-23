@@ -86,7 +86,7 @@ public class MySQLAdsDao implements Ads {
   }
 
   @Override
-  public void delete(Ad ad) {
+  public void delete(long id) {
     String query = "DELETE FROM ads Where id = ?";
     try {
       PreparedStatement stmt = connection.prepareStatement(query);
@@ -129,5 +129,18 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+    @Override
+    public List<Ad> getByUserId(long id) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = ?");
+            stmt.setLong(1, id);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
     }
 }

@@ -11,6 +11,7 @@ public interface Ads {
     Long insert(Ad ad);
     void edit(Ad ad);
     Ad searchByTitle(String title);
-    void delete(Ad ad);
+    void delete(long id);
     Ad getAdById(long id);
+    List<Ad> getByUserId(long id);
 }
