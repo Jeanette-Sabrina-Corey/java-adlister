@@ -2,22 +2,24 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <%@include file="/WEB-INF/partials/stylesheet.html" %>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Welcome to my site!" />
-    </jsp:include>
+        <jsp:param name="title" value="Welcome to my site!" /></jsp:include>
 </head>
 <body>
-<%--    <jsp:include page="/WEB-INF/partials/navbar.jsp" />--%>
+<div class="bg">
     <div class="container col">
-        <h1>ADventure</h1>
-        <p>Get equipped for your next journey</p>
+        <h1 class="brand">ADventure</h1>
+        <p class="tagline">Get equipped for your next journey</p>
+        <div class="container">
         <form action="/login">
-            <button type="submit" name="login" id="login">Login</button>
+            <button type="submit" name="login" id="login" class="btn btn-block landing-btn">Login</button>
         </form>
         <form action="/register">
-            <button type="submit" name="register" id="register">Register</button>
+            <button type="submit" name="register" id="register" class="btn btn-block landing-btn">Register</button>
         </form>
-
+        </div>
     </div>
+</div>
 </body>
 </html>
