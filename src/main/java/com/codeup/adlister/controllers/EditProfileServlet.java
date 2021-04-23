@@ -21,7 +21,7 @@ public class EditProfileServlet extends HttpServlet {
         User user = DaoFactory.getUsersDao().findByUsername(username);
         req.setAttribute("user", user);
 
-        req.getRequestDispatcher("/WEB-INF/users/edit-profile.jsp");
+        req.getRequestDispatcher("/WEB-INF/editProfile.jsp").forward(req, resp);
     }
 
     @Override
