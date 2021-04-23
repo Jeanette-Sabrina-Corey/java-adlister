@@ -15,26 +15,30 @@ import java.io.IOException;
 public class EditAdServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    long id = Long.parseLong(req.getParameter("edit"));
+    Ad ad = DaoFactory.getAdsDao().getAdById(id);
+    req.setAttribute("ad", ad);
     req.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(req,resp);
   }
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+       String updateTitle = req.getParameter("new_title");
+       String updateDescription = req.getParameter("new_description");
+       Ad updateAd = new Ad();
+       updateAd.setTitle(updateTitle);
+       updateAd.setDescription(updateDescription);
 
-    Ad edit = (Ad) req.getSession().getAttribute("id");
-    User user = DaoFactory.getUsersDao().getUserById((int)edit.getUserId());
+       req.getSession().setAttribute("ad",updateAd);
 
-    long ad_id = edit.getId();
-    long user_id = user.getId();
-    String updateTitle = req.getParameter("new_title");
-    String updateDescription = req.getParameter("new_description");
 
-    Ad updateAd = new Ad(
-      ad_id,
-      user_id,
-      updateTitle,
-      updateDescription);
+    boolean inputHasErrors =
+      updateTitle.isEmpty() || updateDescription.isEmpty();
+
+    if(inputHasErrors) {
+      resp.sendRedirect("/edit");
+      return;
+    }
 
     DaoFactory.getAdsDao().edit(updateAd);
     resp.sendRedirect("/ads");
