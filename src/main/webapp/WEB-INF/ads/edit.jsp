@@ -8,20 +8,28 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Title</title>
+  <jsp:include page="../partials/head.jsp">
+    <jsp:param name="title" value="edit Ad"/>
+  </jsp:include>
 </head>
 <body>
-<form method="post" action="/ads">
-  <div class="form-group">
-    <label for="title">Title</label>
-    <input id="title" placeholder="Enter new Title name" name="new_title" type="text">
-  </div>
-  <div class="form-group">
-    <label for="description">Description</label>
-    <input id="description" placeholder="Enter new description" name="new_description" type="text">
-  </div>
-  <button type="submit" name="editAd" class="btn btn-danger">Edit Ad</button>
-</form>
+<jsp:include page="../partials/navbar.jsp" />
+<div class="container">
+  <form method="post" action="${pageContext.request.contextPath}/edit">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input id="title" class="form-control" placeholder="Enter new Title name" name="new_title" type="text">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input id="description" class="form-control" placeholder="Enter new description" name="new_description" type="text">
+    </div>
+
+      <button type="submit" name="editAd" class="btn btn-primary">Edit Ad</button>
+
+    <button type="submit" name="deleteAd" class="btn btn-danger">Delete Ad</button>
+  </form>
+</div>
 
 </body>
 </html>
