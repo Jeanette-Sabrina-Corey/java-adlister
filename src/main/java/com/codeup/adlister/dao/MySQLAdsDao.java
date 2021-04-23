@@ -92,8 +92,8 @@ public class MySQLAdsDao implements Ads {
       PreparedStatement stmt = connection.prepareStatement(query);
       stmt.setLong(1,ad.getId());
       stmt.executeUpdate();
-    } catch (SQLException throwables) {
-      throwables.printStackTrace();
+    } catch (SQLException e) {
+      throw new RuntimeException("Error Deleting Ad");
     }
   }
 
