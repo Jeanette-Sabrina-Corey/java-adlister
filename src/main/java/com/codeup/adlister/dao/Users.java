@@ -7,7 +7,7 @@ import java.util.List;
 public interface Users {
     User findByUsername(String username);
     Long insert(User user);
-    void update(String username, String email, String password, int id);
+    void update(User user);
     void delete(User user);
     User getUserById(int id);
 }

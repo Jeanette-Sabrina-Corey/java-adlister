@@ -54,14 +54,13 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
-    public void update(String username, String email, String password, int id) {
-        String query = "UPDATE users SET(username, email, password) VALUES (?, ?, ?) WHERE id= ?";
+    public void update(User user) {
+        String query = "UPDATE users SET username = ?, email = ? WHERE username = ?";
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setString(1, username);
-            stmt.setString(2, email);
-            stmt.setString(3, password);
-            stmt.setInt(4, id);
+            stmt.setString(1, user.getUsername());
+            stmt.setString(2, user.getEmail());
+            stmt.setString(3, user.getUsername());
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException("Error updating user information");
