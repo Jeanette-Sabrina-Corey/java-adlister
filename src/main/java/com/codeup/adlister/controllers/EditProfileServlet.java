@@ -17,8 +17,8 @@ public class EditProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
-
-        User user = DaoFactory.getUsersDao().findByUsername(username);
+        long id = Long.parseLong(req.getParameter("editUser"));
+        User user = DaoFactory.getUsersDao().getUserById(id);
         req.setAttribute("user", user);
 
         req.getRequestDispatcher("/WEB-INF/editProfile.jsp").forward(req, resp);
@@ -28,9 +28,13 @@ public class EditProfileServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String username = req.getParameter("username");
         String email = req.getParameter("email");
-
-
-
+        User user = (User) req.getSession().getAttribute("user");
+        User updatedUser = new User();
+        updatedUser.setUsername(username);
+        updatedUser.setEmail(email);
+        updatedUser.setId(user.getId());
+        updatedUser.setPassword(user.getPassword());
+        req.getSession().setAttribute("user", updatedUser);
         boolean inputHasErrors =
                 username.isEmpty()
                 || email.isEmpty();
@@ -40,7 +44,7 @@ public class EditProfileServlet extends HttpServlet {
             resp.sendRedirect("/profile-edit");
             return;
         }
-//        DaoFactory.getUsersDao().update(username, email, password, id);
+        DaoFactory.getUsersDao().update(updatedUser);
         resp.sendRedirect("/profile");
     }
 }

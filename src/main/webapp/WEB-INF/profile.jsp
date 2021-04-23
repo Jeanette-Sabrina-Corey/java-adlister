@@ -12,7 +12,7 @@
     <h1>Welcome, ${sessionScope.user.username}!</h1>
 </div>
 <form action="/profile-edit">
-    <button type="submit" name="editUser" id="editUser" class="btn btn-primary m-2">Edit Info</button>
+    <button type="submit" name="editUser" id="editUser" class="btn btn-primary m-2" value="${user.id}">Edit Info</button>
 </form>
 
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
