@@ -20,6 +20,9 @@
         </div>
         <input type="submit" class="btn btn-primary btn-block">
     </form>
+    <form action="/profile-delete" method="post">
+        <button type="submit" name="deleteUser" id="deleteUser" class="btn btn-primary m-2" value="${user.id}">Delete your profile</button>
+    </form>
 </div>
 </body>
 </html>

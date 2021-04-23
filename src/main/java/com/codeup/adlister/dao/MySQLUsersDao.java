@@ -67,10 +67,17 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-  @Override
-  public void delete(User user) {
-
-  }
+    @Override
+    public void delete(User user) {
+        String query = "DELETE FROM users Where id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1,user.getId());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
   @Override
   public User getUserById(long id) {
