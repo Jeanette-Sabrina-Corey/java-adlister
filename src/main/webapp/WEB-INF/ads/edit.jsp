@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+  <%@include file="/WEB-INF/partials/stylesheet.html" %>
   <jsp:include page="../partials/head.jsp">
     <jsp:param name="title" value="edit Ad"/>
   </jsp:include>
@@ -30,6 +31,6 @@
     <button type="submit" name="deleteAd" class="btn btn-danger">Delete Ad</button>
   </form>
 </div>
-
+<jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>
 </html>
