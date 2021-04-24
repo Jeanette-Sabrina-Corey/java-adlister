@@ -13,8 +13,10 @@
     --laurel-green: #C1C5AE;
 }
 
+/*LANDING*/
+
 .bg {
-    background-image: url("../img/landing-img.jpg");
+    background-image: url("../img/landing-img-dos.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -42,8 +44,10 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
     color: var(--off-white);
-    background-color: var(--orange);
+    background-color: var(--army-green);
 }
+
+/*LOGIN*/
 
 .bg-login {
     background-image: url("../img/login-img.jpg");
@@ -79,6 +83,8 @@
     margin-bottom: 2em;
 }
 
+/*REGISTER*/
+
 .bg-reg {
     background-image: url("../img/reg-img.jpg");
     height: 100%;
@@ -106,6 +112,97 @@
 }
 
 .reg-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: var(--off-white);
+    background-color: var(--army-green);
+    margin-top: .5em;
+}
+
+/*NAV*/
+
+.nav-bg {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--jet);
+    background-color: var(--off-white);
+}
+
+.nav-btn {
+    border-color: var(--army-green);
+    color: var(--army-green);
+}
+
+
+/*PROFILE*/
+
+.bg-pro {
+    background-color: var(--off-white);
+}
+
+.pro-welcome {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--jet);
+    padding-top: 1em;
+    margin-bottom: 1.5em;
+}
+
+.pro-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: var(--off-white);
+    background-color: var(--army-green);
+    /*margin: .5em;*/
+}
+
+
+/*CARDS*/
+
+.card-bg {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--off-white);
+    background-color: var(--army-green);
+    border: 1px solid #474B24;
+}
+
+.card-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: var(--jet);
+    background-color: var(--off-white);
+}
+
+/*EDIT PROFILE*/
+
+.bg-edit {
+    background-image: url("../img/profile-img.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.edit-text-top {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--jet);
+    padding-top: 2em;
+}
+
+.edit-text-btm {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--jet);
+    margin-bottom: 2em;
+}
+
+.edit-btn {
     font-family: 'Open Sans', sans-serif;
     font-size: 1em;
     color: var(--off-white);
