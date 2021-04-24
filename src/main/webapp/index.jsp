@@ -4,7 +4,7 @@
 <head>
     <%@include file="/WEB-INF/partials/stylesheet.html" %>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Welcome to my site!" /></jsp:include>
+        <jsp:param name="title" value="Welcome to ADventure!" /></jsp:include>
 </head>
 <body>
 <div class="bg">
