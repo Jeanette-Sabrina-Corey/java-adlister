@@ -26,7 +26,7 @@
     text-align: center;
     color: var(--off-white);
     font-size: 5em;
-    padding-top: 2em;
+    padding-top: 1.8em;
 }
 
 .tagline {
@@ -43,4 +43,72 @@
     font-size: 1em;
     color: var(--off-white);
     background-color: var(--orange);
+}
+
+.bg-login {
+    background-image: url("../img/login-img.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.brand-login {
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
+    color: var(--army-green);
+    font-size: 5em;
+    padding-top: 1.8em;
+    margin-bottom: .8em;
+}
+
+.login-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: var(--off-white);
+    background-color: var(--army-green);
+}
+
+.login-h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--jet);
+    padding-top: 1em;
+    margin-bottom: 2em;
+}
+
+.bg-reg {
+    background-image: url("../img/reg-img.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.brand-reg {
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
+    color: var(--army-green);
+    font-size: 5em;
+    padding-top: .5em;
+    margin-bottom: .2em;
+}
+
+.reg-tagline {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--jet);
+    margin-bottom: 1.5em;
+}
+
+.reg-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: var(--off-white);
+    background-color: var(--army-green);
+    margin-top: .5em;
 }
