@@ -3,6 +3,7 @@
 
 <html>
 <head>
+    <%@include file="/WEB-INF/partials/stylesheet.html" %>
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Ad Details"/>
     </jsp:include>

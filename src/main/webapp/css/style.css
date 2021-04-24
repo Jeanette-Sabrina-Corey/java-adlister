@@ -172,5 +172,40 @@
     font-size: 1em;
     color: var(--jet);
     background-color: var(--off-white);
-    /*margin: 2em;*/
+}
+
+/*EDIT PROFILE*/
+
+.bg-edit {
+    background-image: url("../img/profile-img.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.edit-text-top {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--jet);
+    padding-top: 2em;
+}
+
+.edit-text-btm {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--jet);
+    margin-bottom: 2em;
+}
+
+.edit-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: var(--off-white);
+    background-color: var(--army-green);
+    margin-top: .5em;
 }

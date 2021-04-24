@@ -2,6 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <%@include file="/WEB-INF/partials/stylesheet.html" %>
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Viewing All The Ads" />
     </jsp:include>
@@ -23,10 +24,10 @@
                     <button type="submit" name="id" id="id" class="btn btn-primary m-2" value="${ad.id}">View
                         More</button>
                 </form>
-                <form action="/edit">
-                    <button type="submit" name="edit" id="edit" class="btn btn-primary m-2" value="${ad.id}">Edit
-                    </button>
-                </form>
+<%--                <form action="/edit">--%>
+<%--                    <button type="submit" name="edit" id="edit" class="btn btn-primary m-2" value="${ad.id}">Edit--%>
+<%--                    </button>--%>
+<%--                </form>--%>
                 </div>
             </div>
     </div>
