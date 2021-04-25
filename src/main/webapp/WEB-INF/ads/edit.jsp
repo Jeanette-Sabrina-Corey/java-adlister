@@ -15,21 +15,22 @@
 </head>
 <body>
 <jsp:include page="../partials/navbar.jsp" />
+<div class="bg-edit">
 <div class="container">
+  <h1 class="edit-header">Make your edits below:</h1>
+
   <form method="post" action="${pageContext.request.contextPath}/edit">
     <div class="form-group">
-      <label for="title">Title</label>
-      <input id="title" class="form-control" placeholder="Enter new Title name" name="new_title" type="text">
+      <input id="title" class="form-control" placeholder="Enter New Title" name="new_title" type="text">
     </div>
     <div class="form-group">
-      <label for="description">Description</label>
-      <input id="description" class="form-control" placeholder="Enter new description" name="new_description" type="text">
+      <input id="description" class="form-control" placeholder="Enter New Description" name="new_description"
+             type="text">
     </div>
-      <button type="submit" name="edit" class="btn btn-primary" value="${ad.id}">Edit Ad</button>
-
-      <button type="submit" name="delete" class="btn btn-danger" value="${ad.id}">Delete Ad</button>
-
+      <button type="submit" name="edit" class="btn pro-btn btn-block" value="${ad.id}">Save Changes</button>
   </form>
+
+</div>
 </div>
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>
