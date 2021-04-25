@@ -10,4 +10,5 @@ public interface Users {
     void update(User user);
     void delete(User user);
     User getUserById(long id);
+    List<User> all();
 }

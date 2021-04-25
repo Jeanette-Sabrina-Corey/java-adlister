@@ -1,5 +1,7 @@
 USE ADventure_db;
 
+DROP TABLE IF EXISTS ad_categories;
+DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
 
@@ -19,4 +21,16 @@ CREATE TABLE ads (
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
         ON DELETE CASCADE
+);
+
+CREATE TABLE categories (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE ad_categories (
+    ad_id INT UNSIGNED NOT NULL,
+    categories_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY (ad_id) REFERENCES ads(id),
+    FOREIGN KEY (categories_id) REFERENCES categories(id)
 );

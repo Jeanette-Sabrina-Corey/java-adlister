@@ -1,9 +1,12 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MySQLUsersDao implements Users {
     private Connection connection;
@@ -21,6 +24,17 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+@Override
+  public List<User> all() {
+    PreparedStatement stmt = null;
+    try {
+      stmt = connection.prepareStatement("SELECT * FROM users");
+      ResultSet rs = stmt.executeQuery();
+      return createUserFromResults(rs);
+    } catch (SQLException e) {
+      throw new RuntimeException("Error retrieving all Users", e);
+    }
+  }
 
     @Override
     public User findByUsername(String username) {
@@ -90,6 +104,14 @@ public class MySQLUsersDao implements Users {
     } catch (SQLException e) {
       throw new RuntimeException("Error finding user name");
     }
+  }
+
+  private List<User> createUserFromResults(ResultSet rs) throws SQLException {
+    List<User> user = new ArrayList<>();
+    while (rs.next()) {
+      user.add(extractUser(rs));
+    }
+    return user;
   }
 
   private User extractUser(ResultSet rs) throws SQLException {
