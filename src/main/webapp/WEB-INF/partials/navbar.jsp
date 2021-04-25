@@ -17,7 +17,7 @@
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search ADs" aria-label="Search">
+            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search ADs" aria-label="Search">
             <button class="btn nav-btn my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
