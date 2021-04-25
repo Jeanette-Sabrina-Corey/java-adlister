@@ -49,11 +49,11 @@
                                             value="${ad.id}">Edit
                                     </button>
                                 </form>
-                                <form action="${pageContext.request.contextPath}/delete">
+                              <form action="${pageContext.request.contextPath}/deleteAd" method="post">
                                     <button type="submit" name="delete" id="delete" class="btn card-btn btn-block"
                                             value="${ad.id}">Delete
                                     </button>
-                                </form>
+                              </form>
                             </div>
                         </div>
                     </div>
