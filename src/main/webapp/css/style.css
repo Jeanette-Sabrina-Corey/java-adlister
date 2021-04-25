@@ -253,3 +253,24 @@
     margin-bottom: 1.5em;
     margin-left: .5em;
 }
+
+/*CREATE NEW AD*/
+
+.bg-create {
+    background-image: url("../img/create-ads-bg.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.create-header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.7em;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--jet);
+    padding-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-left: .5em;
+}
