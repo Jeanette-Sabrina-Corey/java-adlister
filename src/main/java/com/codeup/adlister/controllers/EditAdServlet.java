@@ -1,5 +1,6 @@
 package com.codeup.adlister.controllers;
 
+import com.codeup.adlister.dao.Ads;
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.User;
@@ -18,32 +19,31 @@ public class EditAdServlet extends HttpServlet {
     long id = Long.parseLong(req.getParameter("edit"));
     Ad ad = DaoFactory.getAdsDao().getAdById(id);
     req.setAttribute("ad", ad);
-    req.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(req,resp);
+
+    req.getRequestDispatcher("/WEB-INF/ads/edit.jsp").forward(req, resp);
   }
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       String updateTitle = req.getParameter("new_title");
-       String updateDescription = req.getParameter("new_description");
-       Ad updateAd = new Ad();
-       updateAd.setTitle(updateTitle);
-       updateAd.setDescription(updateDescription);
-
-       req.getSession().setAttribute("ad",updateAd);
-
-
+    long id = Long.parseLong(req.getParameter("edit"));
+    String updateTitle = req.getParameter("new_title");
+    String updateDescription = req.getParameter("new_description");
+      Ad updateAd = new Ad();
+      updateAd.setTitle(updateTitle);
+      updateAd.setDescription(updateDescription);
+      updateAd.setId(id);
     boolean inputHasErrors =
       updateTitle.isEmpty() || updateDescription.isEmpty();
 
-    if(inputHasErrors) {
+    if (inputHasErrors) {
       resp.sendRedirect("/edit");
       return;
-    }
-
-    DaoFactory.getAdsDao().edit(updateAd);
-    resp.sendRedirect("/ads");
-
-
-
   }
-}
+      DaoFactory.getAdsDao().edit(updateAd);
+
+
+      resp.sendRedirect("/profile");
+
+    }
+  }
+
