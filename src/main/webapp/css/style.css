@@ -232,3 +232,24 @@
     text-transform: lowercase;
 }
 
+
+/*EDIT AD*/
+
+.bg-edit {
+    background-image: url("../img/edit-ads-bg.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.edit-header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.7em;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--jet);
+    padding-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-left: .5em;
+}
