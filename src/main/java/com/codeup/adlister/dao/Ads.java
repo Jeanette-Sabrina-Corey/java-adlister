@@ -14,4 +14,5 @@ public interface Ads {
     void delete(long id);
     Ad getAdById(long id);
     List<Ad> getByUserId(long id);
+    List<Ad> searchByUserInput(String input);
 }
