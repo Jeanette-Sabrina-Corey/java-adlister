@@ -25,10 +25,10 @@
       <label for="description">Description</label>
       <input id="description" class="form-control" placeholder="Enter new description" name="new_description" type="text">
     </div>
+      <button type="submit" name="edit" class="btn btn-primary" value="${ad.id}">Edit Ad</button>
 
-      <button type="submit" name="editAd" class="btn btn-primary">Edit Ad</button>
+      <button type="submit" name="delete" class="btn btn-danger" value="${ad.id}">Delete Ad</button>
 
-    <button type="submit" name="deleteAd" class="btn btn-danger">Delete Ad</button>
   </form>
 </div>
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
