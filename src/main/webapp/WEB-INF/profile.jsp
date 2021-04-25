@@ -20,12 +20,19 @@
         <h1>Hey There, ${sessionScope.user.username}!</h1>
     </div>
     <div class="container">
+        <div class="col">
         <form action="${pageContext.request.contextPath}/profile-edit">
             <button type="submit" name="editUser" id="editUser" class="btn pro-btn btn-block" value="${user.id}">Edit
-                Info
+                Your Info
             </button>
         </form>
-
+        <form action="${pageContext.request.contextPath}/ads/create">
+            <button type="submit" name="create-ad" id="create-ad" class="btn pro-btn btn-block"
+                    value="${user.id}">
+                Create a new Ad
+            </button>
+        </form>
+        </div>
         <div class="card-deck">
 
             <c:forEach var="ad" items="${ads}">
@@ -38,7 +45,7 @@
                             <p>${ad.description}</p>
                             <div class="col">
                                 <form action="${pageContext.request.contextPath}/ads/detailed">
-                                    <button type="submit" name="id" id="id" class="btn card-btn btn-block mt-2"
+                                    <button type="submit" name="id" id="id" class="btn card-btn btn-block"
                                             value="${ad.id}">
                                         View
                                         More
