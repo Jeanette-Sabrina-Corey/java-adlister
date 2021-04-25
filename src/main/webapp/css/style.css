@@ -209,3 +209,26 @@
     background-color: var(--army-green);
     margin-top: .5em;
 }
+
+
+/*VIEW ALL ADS*/
+
+.bg-ads {
+    background-color: var(--off-white);
+}
+
+.ads-header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.7em;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--jet);
+    padding-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-left: .5em;
+}
+
+.ads-s {
+    text-transform: lowercase;
+}
+
