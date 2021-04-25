@@ -274,3 +274,14 @@
     margin-bottom: 1.5em;
     margin-left: .5em;
 }
+
+.ads-l {
+    text-transform: lowercase;
+}
+
+.create-btn {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    color: var(--off-white);
+    background-color: var(--army-green);
+}
