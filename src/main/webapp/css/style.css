@@ -258,7 +258,7 @@
 /*CREATE*/
 
 .bg-create {
-    background-image: url("../img/create-ads-bg.jpg");
+    background-image: url("../img/create-bg.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -285,6 +285,13 @@
     font-size: 1em;
     color: var(--off-white);
     background-color: var(--army-green);
+}
+
+.create-check {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    color: var(--jet);
 }
 
 /*DETAIL*/
