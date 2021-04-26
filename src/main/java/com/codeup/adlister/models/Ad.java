@@ -5,8 +5,16 @@ public class Ad {
     private long userId;
     private String title;
     private String description;
+    private Long categoryIds;
+
+
+
 
   public Ad() {
+  }
+
+  public Long getCategoryIds() {
+    return categoryIds;
   }
 
   public Ad(long id, long userId, String title, String description) {
