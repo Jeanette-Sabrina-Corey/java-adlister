@@ -11,15 +11,16 @@
 <body>
 
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
-
-<div class="container bg-create">
-    <div class="col-md-6">
-        <h2>${ad.title}</h2>
-        <h5>${user.username}</h5>
-        <p>${ad.description}</p>
+<div class="bg-detail">
+    <div class="container">
+            <h2 class="detail-title">${ad.title}</h2>
+            <img src="/img/river.jpg" class="img-thumbnail rounded mx-auto d-block img-detail" alt="...">
+            <div class="container m-3">
+            <h5 class="detail-more">ADventure Buddy: ${user.username}</h5>
+            <p class="detail-more">${ad.description}</p>
+            </div>
     </div>
 </div>
-
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
 </body>
 </html>
