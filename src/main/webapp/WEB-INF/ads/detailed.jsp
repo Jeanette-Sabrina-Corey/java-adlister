@@ -16,7 +16,7 @@
             <h2 class="detail-title">${ad.title}</h2>
             <img src="/img/river.jpg" class="img-thumbnail rounded mx-auto d-block img-detail" alt="...">
             <div class="container m-3">
-            <h5 class="detail-more">ADventure Buddy: ${user.username}</h5>
+            <h5 class="detail-more">ADventurer: ${user.username}</h5>
             <p class="detail-more">${ad.description}</p>
             </div>
     </div>
