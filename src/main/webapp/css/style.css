@@ -225,7 +225,7 @@
 .ads-header {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.7em;
-    text-align: left;
+    text-align: center;
     text-transform: uppercase;
     color: var(--jet);
     padding-top: 1.5em;

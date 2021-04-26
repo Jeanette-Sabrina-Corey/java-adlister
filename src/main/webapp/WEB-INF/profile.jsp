@@ -33,7 +33,7 @@
             </button>
         </form>
         </div>
-        <div class="card-deck">
+        <div class="row md-6 justify-content-around">
 
             <c:forEach var="ad" items="${ads}">
 
