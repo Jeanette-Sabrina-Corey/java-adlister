@@ -19,7 +19,14 @@ public class Ad {
     return categoryIds;
   }
 
-  public Ad(long id, long userId, String title, String description) {
+    public Ad(long userId, String title, String description, List<Long> categoryIds) {
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.categoryIds = categoryIds;
+    }
+
+    public Ad(long id, long userId, String title, String description) {
         this.id = id;
         this.userId = userId;
         this.title = title;
