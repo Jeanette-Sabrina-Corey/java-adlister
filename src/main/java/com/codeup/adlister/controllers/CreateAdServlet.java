@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 @WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
 public class CreateAdServlet extends HttpServlet {
@@ -24,11 +26,16 @@ public class CreateAdServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
-        Ad ad = new Ad(
-            user.getId(),
-            request.getParameter("title"),
-            request.getParameter("description")
-        );
+            String title = request.getParameter("title");
+            String description = request.getParameter("description");
+        List<String> categoriesList = Arrays.asList(request.getParameterValues("category"));
+
+
+
+        Ad ad = new Ad();
+        ad.setTitle(title);
+        ad.setDescription(description);
+        ad.setCategoryIds(categoriesList);
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
     }

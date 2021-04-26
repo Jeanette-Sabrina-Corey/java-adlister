@@ -32,6 +32,10 @@ public class Ad {
         this.description = description;
     }
 
+    public void setCategoryIds(List<Long> categoryIds) {
+        this.categoryIds = categoryIds;
+    }
+
     public long getId() {
         return id;
     }
