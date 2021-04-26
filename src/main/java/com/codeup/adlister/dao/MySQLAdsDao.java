@@ -43,14 +43,23 @@ public class MySQLAdsDao implements Ads {
     public Long insert(Ad ad) {
         try {
             String insertQuery = "INSERT INTO ads(user_id, title, description) VALUES (?, ?, ?)";
+            String adCategories = "INSERT INTO ad_categories(ad_id, categories_id) VALUES (?,?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement catStmt = connection.prepareStatement(adCategories);
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
             stmt.setString(3, ad.getDescription());
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
-            return rs.getLong(1);
+            Long lastInsertedId = rs.getLong(1);
+            List<Long> categoryIds = ad.getCategoryIds();
+            for (Long categoryId : categoryIds) {
+              catStmt.setLong(1,lastInsertedId);
+              catStmt.setLong(2, categoryId);
+              catStmt.executeUpdate();
+            }
+            return lastInsertedId;
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
