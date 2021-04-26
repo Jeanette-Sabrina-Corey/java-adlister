@@ -254,7 +254,6 @@
     margin-left: .5em;
 }
 
-/*CREATE NEW AD*/
 
 .bg-create {
     background-image: url("../img/create-ads-bg.jpg");
@@ -263,6 +262,9 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+
+/*CREATE*/
 
 .create-header {
     font-family: 'Open Sans', sans-serif;
