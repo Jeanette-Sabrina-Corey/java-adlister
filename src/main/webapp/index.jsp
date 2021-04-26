@@ -9,7 +9,10 @@
 <body>
 <div class="bg">
     <div class="container col">
-        <h1 class="brand">ADventure</h1>
+        <div class="container">
+        <img class="img-fluid brand" src="img/brand.png" alt="">
+        </div>
+<%--        <h1 class="brand">ADventure</h1>--%>
         <p class="tagline">Get equipped for your next journey</p>
         <div class="container">
         <form action="/login">

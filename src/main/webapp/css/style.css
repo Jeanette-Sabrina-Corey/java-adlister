@@ -23,12 +23,17 @@
     background-size: cover;
 }
 
+/*.brand {*/
+/*    font-family: 'Cabin', sans-serif;*/
+/*    text-align: center;*/
+/*    color: var(--off-white);*/
+/*    font-size: 5em;*/
+/*    padding-top: 1.8em;*/
+/*}*/
+
 .brand {
-    font-family: 'Cabin', sans-serif;
-    text-align: center;
-    color: var(--off-white);
-    font-size: 5em;
-    padding-top: 1.8em;
+    padding-top: 4em;
+    margin-bottom: 1.8em;
 }
 
 .tagline {
@@ -220,7 +225,7 @@
 .ads-header {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.7em;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase;
     color: var(--jet);
     padding-top: 1.5em;
