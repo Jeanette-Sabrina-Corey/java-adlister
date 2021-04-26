@@ -33,6 +33,6 @@ INSERT INTO categories (id, name)
            (4,'Tips and Tricks'),
            (5,'Outdoor Meets');
 
-# adding categories into the ads
+-- # adding categories into the ads
 INSERT INTO ad_categories (ad_id, categories_id)
     VALUES (1,1),(2,5),(3,4),(4,1),(5,2),(6,4),(7,3),(8,5),(9,1);
