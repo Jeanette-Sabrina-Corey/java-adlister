@@ -1,11 +1,13 @@
 package com.codeup.adlister.models;
 
+import java.util.List;
+
 public class Ad {
     private long id;
     private long userId;
     private String title;
     private String description;
-    private Long categoryIds;
+    private List<Long> categoryIds;
 
 
 
@@ -13,7 +15,7 @@ public class Ad {
   public Ad() {
   }
 
-  public Long getCategoryIds() {
+  public List<Long> getCategoryIds() {
     return categoryIds;
   }
 
