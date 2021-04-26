@@ -1,5 +1,6 @@
 package com.codeup.adlister.dao;
 
+import com.codeup.adlister.models.Ad;
 import com.codeup.adlister.models.Category;
 import com.mysql.cj.jdbc.Driver;
 
@@ -24,24 +25,24 @@ public class MySQLCategoriesDao implements Categories{
     }
   }
 
-
-  public void insertAdCategory(long adId, long categoryId) {
-    String query = "INSERT INTO ad_categories(ad_id,categories_id) VALUES (?,?)";
-    try {
-      PreparedStatement stmt = connection.prepareStatement(query);
-      stmt.setLong(1, adId);
-      stmt.setLong(2,categoryId);
-      stmt.executeUpdate();
-
-    } catch (SQLException e) {
-      throw new RuntimeException("Did not add categories");
-    }
-  }
+//
+//  public void insertAdCategory(long adId, long categoryId) {
+//    String query = "INSERT INTO ad_categories(ad_id,categories_id) VALUES (?,?)";
+//    try {
+//      PreparedStatement stmt = connection.prepareStatement(query);
+//      stmt.setLong(1, adId);
+//      stmt.setLong(2,categoryId);
+//      stmt.executeUpdate();
+//
+//    } catch (SQLException e) {
+//      throw new RuntimeException("Did not add categories");
+//    }
+//  }
 
   private Category extractCategories(ResultSet rs) throws  SQLException{
     return new Category(
-      rs.getInt("ad_id"),
-      rs.getString("categories_id")
+      rs.getInt("id"),
+      rs.getString("name")
     );
   }
 
@@ -51,5 +52,17 @@ public class MySQLCategoriesDao implements Categories{
       categories.add(extractCategories(rs));
     }
     return categories;
+  }
+
+  @Override
+  public List<Category> all() {
+    PreparedStatement stmt = null;
+    try {
+      stmt = connection.prepareStatement("SELECT * FROM categories");
+      ResultSet rs = stmt.executeQuery();
+      return createCatFromResults(rs);
+    } catch (SQLException e) {
+      throw new RuntimeException("Error retrieving all ads.", e);
+    }
   }
 }
