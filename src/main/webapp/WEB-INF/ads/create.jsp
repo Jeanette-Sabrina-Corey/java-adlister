@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -23,20 +23,30 @@
             <div class="form-group">
                 <textarea id="description" name="description" class="form-control" placeholder="Description"></textarea>
             </div>
-            <div class="form-group">
-
-                <c:forEach var="category" items="${categories}">
+            <div class="form-group create-check">
 
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" value=""${category.id} id="categories_id">
-                    <label class="form-check-label" for="categories_id">
-                        Default checkbox
-                    </label>
+                    <input class="form-check-input" type="checkbox" id="1" name="category" value="1">
+                    <label class="form-check-label" for="1">Camping Gear</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="2" name="category" value="2">
+                    <label class="form-check-label" for="2">Hiking Gear</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="3" name="category" value="3">
+                    <label class="form-check-label" for="3">Fishing Gear</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="4" name="category" value="4">
+                    <label class="form-check-label" for="4">Tips and Tricks</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="5" name="category" value="5">
+                    <label class="form-check-label" for="5">Outdoor Meets</label>
                 </div>
 
             </div>
-
-            </c:forEach>
 
             <button type="submit" name="createAd" id="createAd" class="btn create-btn btn-block"
             >Create New Ad
