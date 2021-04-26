@@ -9,7 +9,10 @@
 <body>
 <div class="bg-login">
     <div class="container">
-        <h1 class="brand-login">ADventure</h1>
+        <div class="container">
+            <img class="img-fluid brand" src="img/brand.png" alt="">
+        </div>
+<%--        <h1 class="brand-login">ADventure</h1>--%>
 <%--        <h3 class="login-h1">Please Log In</h3>--%>
         <form action="/login" method="POST">
             <div class="form-group">

@@ -9,7 +9,10 @@
 <body>
 <div class="bg-reg">
     <div class="container">
-        <h1 class="brand-reg">ADventure</h1>
+        <div class="container">
+            <img class="img-fluid brand" src="img/brand.png" alt="">
+        </div>
+<%--        <h1 class="brand-reg">ADventure</h1>--%>
         <p class="reg-tagline">Sign up and gear up!</p>
         <form action="/register" method="post">
             <div class="form-group">
