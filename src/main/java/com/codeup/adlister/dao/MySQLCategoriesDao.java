@@ -66,19 +66,19 @@ public class MySQLCategoriesDao implements Categories{
     }
   }
 
-  @Override
-  public List<Category> filterCats() {
-    PreparedStatement stmt = null;
-    try {
-      stmt = connection.prepareStatement("SELECT categories.name as categories_name\n" +
-              "        FROM categories\n" +
-              "        JOIN ad_categories ON categories.id = ad_categories.categories_id");
-      ResultSet rs = stmt.executeQuery();
-      return createCatFromResults(rs);
-    } catch (SQLException e) {
-      throw new RuntimeException("Error retrieving all ads.", e);
-    }
-  }
+//  @Override
+//  public List<Category> filterCats() {
+//    PreparedStatement stmt = null;
+//    try {
+//      stmt = connection.prepareStatement("SELECT categories.name" +
+//              "        FROM categories\n"  +
+//              "        JOIN ad_categories ON categories.id = ad_categories.ad_id");
+//      ResultSet rs = stmt.executeQuery();
+//      return createCatFromResults(rs);
+//    } catch (SQLException e) {
+//      throw new RuntimeException("Error retrieving all ads.", e);
+//    }
+//  }
 
 }
 
