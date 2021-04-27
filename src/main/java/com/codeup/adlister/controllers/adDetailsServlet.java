@@ -21,7 +21,9 @@ public class adDetailsServlet extends HttpServlet {
         // - Storing the ad being selected in this req obj so it can be displayed in the adDetails.jsp
         Ad ad = DaoFactory.getAdsDao().getAdById(id); // - Need to create a getAdById method
         req.setAttribute("ad", ad);                //   in the interface and define it
-                                                      //   in the MySQLAdsDao
+        req.setAttribute("userId",DaoFactory.getUsersDao().getUserById(ad.getUserId()));
+        //   setting the attribute userId going in the Dao factory to have access to getUserById method
+        // the query will then read as Select all from the users table where id is equal to user id in the ads table
         req.getRequestDispatcher("/WEB-INF/ads/detailed.jsp").forward(req, resp);
     }
 
