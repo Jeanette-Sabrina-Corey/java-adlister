@@ -11,11 +11,9 @@
 </head>
 <body>
 
-
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+
 <div class="bg-pro">
-
-
     <div class="container pro-welcome">
         <h1>Hey There, ${sessionScope.user.username}!</h1>
     </div>
@@ -71,8 +69,8 @@
         </div>
     </div>
 </div>
-<jsp:include page="/WEB-INF/partials/foot.jsp"/>
 
+<jsp:include page="/WEB-INF/partials/foot.jsp"/>
 
 </body>
 </html>

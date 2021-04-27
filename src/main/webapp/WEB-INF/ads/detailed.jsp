@@ -11,6 +11,7 @@
 <body>
 
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+
 <div class="bg-detail">
     <div class="container">
             <h2 class="detail-title">${ad.title}</h2>
@@ -21,6 +22,8 @@
             </div>
     </div>
 </div>
+
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
+
 </body>
 </html>

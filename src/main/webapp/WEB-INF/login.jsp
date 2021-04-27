@@ -7,25 +7,24 @@
     </jsp:include>
 </head>
 <body>
+
 <div class="bg-login">
     <div class="container">
         <div class="container">
             <img class="img-fluid brand" src="img/brand.png" alt="">
         </div>
-<%--        <h1 class="brand-login">ADventure</h1>--%>
-<%--        <h3 class="login-h1">Please Log In</h3>--%>
+
         <form action="/login" method="POST">
             <div class="form-group">
-<%--                <label for="username">Username</label>--%>
                 <input id="username" name="username" class="form-control" placeholder="Username" type="text">
             </div>
             <div class="form-group">
-<%--                <label for="password">Password</label>--%>
                 <input id="password" name="password" class="form-control" placeholder="Password" type="password">
             </div>
             <input type="submit" class="btn btn-block login-btn" value="Log In">
         </form>
     </div>
 </div>
+
 </body>
 </html>
