@@ -8,6 +8,7 @@
     </jsp:include>
 </head>
 <body>
+
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 <div class="bg-ads">
@@ -17,6 +18,7 @@
     </div>
     <div>
         <div class="row md-6 justify-content-around">
+
             <c:forEach var="ad" items="${ads}">
                 <div class="card m-5 card-bg" style="width: 400px">
                     <img class="card-img-top" src="${pageContext.request.contextPath}/img/packing-list.jpg"
@@ -24,9 +26,11 @@
                     <div class="card-body">
                         <div>
                             <h5>${ad.title}</h5>
+
 <%--                            <c:forEach var="category" items="${categories}">--%>
 <%--                                    <h5>${category.category}</h5>--%>
 <%--                            </c:forEach>--%>
+
                             <p>${ad.description}</p>
                             <div class="col">
                                 <form action="/ads/detailed">
@@ -45,6 +49,8 @@
         </div>
     </div>
 </div>
+
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
+
 </body>
 </html>

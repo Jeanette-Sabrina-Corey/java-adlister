@@ -14,9 +14,12 @@
   </jsp:include>
 </head>
 <body>
+
 <jsp:include page="../partials/navbar.jsp" />
+
 <div class="bg-edit">
 <div class="container">
+
   <h1 class="edit-header">Make your edits below:</h1>
 
   <form method="post" action="${pageContext.request.contextPath}/edit">
@@ -32,6 +35,8 @@
 
 </div>
 </div>
+
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
+
 </body>
 </html>

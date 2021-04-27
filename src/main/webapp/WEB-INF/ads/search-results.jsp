@@ -8,6 +8,7 @@
     </jsp:include>
 </head>
 <body>
+
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
 <div class="bg-ads">
@@ -17,6 +18,7 @@
     </div>
     <div>
         <div class="container card-deck">
+
             <c:forEach var="ad" items="${ads}">
                 <div class="card m-5 card-bg" style="width: 400px">
                     <img class="card-img-top" src="${pageContext.request.contextPath}/img/packing-list.jpg" alt="Card image cap">
@@ -35,11 +37,14 @@
                         </div>
                     </div>
                 </div>
+
             </c:forEach>
 
         </div>
     </div>
 </div>
+
 <jsp:include page="/WEB-INF/partials/foot.jsp"/>
+
 </body>
 </html>
