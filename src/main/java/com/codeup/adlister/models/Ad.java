@@ -8,7 +8,7 @@ public class Ad {
     private String title;
     private String description;
     private List<Long> categoryIds;
-
+//    private List<Category> categories;
 
 
 

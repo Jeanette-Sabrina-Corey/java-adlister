@@ -26,14 +26,14 @@ public class CreateAdServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        User user = (User) request.getSession().getAttribute("user");
+        User user = (User) request.getSession().getAttribute("user"); // Getting the current user from the session
             String title = request.getParameter("title");
             String description = request.getParameter("description");
-        List<String> categoriesList = Arrays.asList(request.getParameterValues("category"));
+        List<String> categoriesList = Arrays.asList(request.getParameterValues("category")); // String values of the five different categories in an array
 //        System.out.println(categoriesList);
         List<Long> catsAsLongs = new ArrayList<>();
 
-        for (String s : categoriesList) {
+        for (String s : categoriesList) { // Converting the values
             catsAsLongs.add(Long.valueOf(s));
         }
         System.out.println(catsAsLongs);

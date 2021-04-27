@@ -16,35 +16,36 @@ import java.io.IOException;
 public class EditProfileServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String username = req.getParameter("username");
-        long id = Long.parseLong(req.getParameter("editUser"));
-        User user = DaoFactory.getUsersDao().getUserById(id);
-        req.setAttribute("user", user);
+        long id = Long.parseLong(req.getParameter("editUser"));//<------------------ Pulling the value of the user ID associated with the button in profile.jsp
+        User user = DaoFactory.getUsersDao().getUserById(id);// <---------------------- Passing the ID into the getUserById method returning the corresponding user object
+        req.setAttribute("user", user);// <----------------------------------------- Setting user attribute to the new user object to be used in the doPost
 
-        req.getRequestDispatcher("/WEB-INF/editProfile.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/editProfile.jsp").forward(req, resp);//<- Directing the user to the editProfile page containing the form
     }
+
+    //TODO: Update the user username and email while maintaining the same ID and password:
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("username");
-        String email = req.getParameter("email");
-        User user = (User) req.getSession().getAttribute("user");
-        User updatedUser = new User();
-        updatedUser.setUsername(username);
-        updatedUser.setEmail(email);
-        updatedUser.setId(user.getId());
-        updatedUser.setPassword(user.getPassword());
-        req.getSession().setAttribute("user", updatedUser);
-        boolean inputHasErrors =
+        String username = req.getParameter("username");// <------------------------- Pulling username user input from form on editProfile.jsp
+        String email = req.getParameter("email");// <------------------------------- Pulling email user input from form on editProfile.jsp
+        User user = (User) req.getSession().getAttribute("user");// <--------------- Pulling the currently logged in user object from session
+        User updatedUser = new User();// <--------------------------------------------- Creating a new instance of user to set new values
+        updatedUser.setUsername(username);// <----------------------------------------- Setting the new username to the user input
+        updatedUser.setEmail(email);// <----------------------------------------------- Setting the new email to the user input
+        updatedUser.setId(user.getId());// <------------------------------------------- Setting the user ID to the currently logged in user's ID
+        updatedUser.setPassword(user.getPassword());// <------------------------------- Setting the password to the currently logged in user's password
+        req.getSession().setAttribute("user", updatedUser);// <--------------------- Setting the new user as the current user
+
+        boolean inputHasErrors = // <-------------------------------------------------- Checking that the form fields are not empty
                 username.isEmpty()
                 || email.isEmpty();
-
 
         if (inputHasErrors) {
             resp.sendRedirect("/profile-edit");
             return;
         }
-        DaoFactory.getUsersDao().update(updatedUser);
-        resp.sendRedirect("/profile");
+        DaoFactory.getUsersDao().update(updatedUser);// <------------------------------ Updating the database by passing the new user into the update method
+        resp.sendRedirect("/profile");// <------------------------------------------ Sending the user back to their profile page
     }
 }
