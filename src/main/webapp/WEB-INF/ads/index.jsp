@@ -25,7 +25,7 @@
                         <div>
                             <h5>${ad.title}</h5>
 <%--                            <c:forEach var="category" items="${categories}">--%>
-<%--                                    <h5>${category.id}</h5>--%>
+<%--                                    <h5>${category.category}</h5>--%>
 <%--                            </c:forEach>--%>
                             <p>${ad.description}</p>
                             <div class="col">
